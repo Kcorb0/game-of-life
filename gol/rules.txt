@@ -1,0 +1,9 @@
+Description:
+GOL is played on an infinite grid of square cells,
+the evolution is only determined by it's initial state.
+
+
+Rules:
+- Birth: a cell that is dead at time 't' will be alive at 
+  time 't+1', IF exactly 3 of it's eight neighbors were 
+  alive at time 't'
