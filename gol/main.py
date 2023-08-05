@@ -1,6 +1,7 @@
 from life_forms import blinker, toad
 import os
 import time
+import random
 from copy import deepcopy
 
 
@@ -21,6 +22,8 @@ def game_of_life(initial_state):
     iteration = 0
   
     while True:
+        time.sleep(0.1)
+        os.system('cls')
         iteration += 1
 
         for y in range(grid_height):
@@ -82,19 +85,19 @@ def game_of_life(initial_state):
                 #print(f'({y},{x}): {cell}, local life: {life_count}')
         
         past_state = deepcopy(current_state)
-        time.sleep(0.5)
-        os.system('clear')
-        
-        print(f"Iteration: {iteration}")
-
         sum_alive = sum([i.count(1) for i in current_state])
+
+        #os.system('clear')
+        print(f"Iteration: {iteration}")
         print(f"Cells Alive: {sum_alive} \n")
 
 
         for row in current_state:
             chars = ['.', 'o']
             print(" ".join([chars[cell] for cell in row]))
-  
 
 
-game_of_life(toad)
+
+mega_sample = [[random.choice([0,1]) for x in range(50)] for i in range(50)]
+
+game_of_life(mega_sample)
